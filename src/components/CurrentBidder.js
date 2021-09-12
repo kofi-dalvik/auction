@@ -1,9 +1,10 @@
 import React from 'react'
 
-function CurrentBidder({bid}) {
+function CurrentBidder({ bid, title}) {
     return (
         <>
-            <p className="text-secondary mb-1">Current Bid</p>
+            {title && <p className="text-secondary mb-1">{title}</p> }
+
             <div className="current-bidder">
                 {bid ? (<>
                     <img src={bid.user.image_url} alt="current bidder" className="mr-2" />

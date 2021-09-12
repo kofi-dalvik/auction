@@ -1,8 +1,8 @@
+import AuthLayout from './AuthLayout';
+
 function Settings() {
     return (
-        <h1>
-            Settings
-        </h1>
+        <AuthLayout className="pt-5"></AuthLayout>
     )
 }
 

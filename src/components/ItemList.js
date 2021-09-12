@@ -7,8 +7,8 @@ function ItemList({ items }) {
         <>
             <div className="row">
                 {items.map((item, index) => (
-                    <div className="col-md-4" key={index}>
-                        <Item />
+                    <div className="col-lg-4 col-md-6 col-sm-12 col-12" key={index}>
+                        <Item item={item}/>
                     </div>
                 ))}
             </div>

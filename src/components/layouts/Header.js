@@ -15,7 +15,7 @@ function Header() {
                     </div>
                     <div className="account">
                         <button className="user elevation">
-                            <span>username</span>
+                            <span>Logout</span>
                             <img src="/logo512.png" alt="Profile" className="ml-2" />
                         </button>
                     </div>

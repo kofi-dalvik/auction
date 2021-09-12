@@ -1,20 +1,21 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 // import Carousel from './Carousel';
 
-function Item() {
+function Item({item}) {
     // const images = ['/logo512.png', '/logo512.png', '/logo512.png',];
 
     return (
-        <div className="auction-item mb-4">
+        <div className="auction-item mb-4 elevation">
             <div className="media">
                 <div className="actions">
-                    <button className="elevations font-weight-bold">
+                    <button className="button elevations font-weight-bold">
                         $ 100
                     </button>
 
-                    <button className="price elevation font-xs bid-now">
+                    <Link to={`items/${item}`} className="button elevation font-xs bid-now">
                         Bid Now
-                    </button>
+                    </Link>
                 </div>
 
                 {/* <Carousel images={images} /> */}

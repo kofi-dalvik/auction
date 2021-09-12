@@ -11,7 +11,7 @@ export const SET_AUTH_USER = (state, payload) => {
     if (payload.token) {
         state.auth.token = payload.token;
 
-        localStorage.setItem(storageKeys.token, JSON.stringify(state.auth.token))
+        localStorage.setItem(storageKeys.token, state.auth.token)
     }
 
     state.auth.isLoggedIn = !!state.auth.user;
@@ -29,8 +29,25 @@ export const LOGOUT = (state, payload) => {
     return state;
 }
 
+export const SET_ITEMS = (state, payload) => {
+    state.items = {
+        all: payload.data ? payload.data : payload,
+        pageDetails: {
+            to: payload.to || 0,
+            from: payload.from || 0,
+            currentPage: payload.current_page || 0,
+            total: payload.total || 0,
+            lastPage: payload.last_page || 0
+        }
+    }
+
+    return state;
+}
+
 const actions = {
-    SET_AUTH_USER
+    SET_AUTH_USER,
+    LOGOUT,
+    SET_ITEMS
 }
 
 export default actions;

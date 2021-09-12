@@ -158,9 +158,10 @@
             background-color: rgba($primary, 0.5);
 
             span{
-                background-color: $base-soft;
+                background-color: white;
+                color: $secondary;
                 padding: 3px 5px;
-                border-radius: 10px;
+                border-radius: 5px;
                 margin: 0 2px;
             }
         }

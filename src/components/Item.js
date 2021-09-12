@@ -22,7 +22,7 @@ function Item({item}) {
 
                 <Carousel images={item.images} />
 
-                <Timer />
+                <Timer date={item.closing_date}/>
             </div>
 
             <div className="description mt-1 p-2">

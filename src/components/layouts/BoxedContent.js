@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 function BoxedContent({className, children}) {
     return (
         <div className="row justify-content-center v-stretch">
@@ -10,4 +12,4 @@ function BoxedContent({className, children}) {
     )
 }
 
-export default BoxedContent
+export default memo(BoxedContent);

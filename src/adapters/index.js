@@ -1,4 +1,5 @@
 import Axios from 'axios';
+import { storageKeys } from '../store/actions';
 
 const baseURL = {
     production: 'http://localhost:8000/api/',
@@ -22,7 +23,7 @@ const interceptFailure = (error) => {
 };
 
 const interceptRequest = (config) => {
-    let apiToken = null;
+    let apiToken = localStorage.getItem(storageKeys.token);
 
     if (apiToken && !config.headers.common.Authorization) {
         config.headers.common.Authorization = `Bearer ${apiToken}`;

@@ -4,6 +4,7 @@ import AuthLayout from './AuthLayout';
 import Item from '../components/Item';
 import { show } from '../adapters/items';
 import BidNow from '../components/BidNow';
+import BiddingHistory from '../components/BiddingHistory';
 
 function ItemDetail() {
     const {item_id} = useParams();
@@ -29,8 +30,11 @@ function ItemDetail() {
                     <div className="col-md-6">
                         <Item item={item} isDetailed />
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-3 v-stretch">
                         <BidNow item={item}/>
+                    </div>
+                    <div className="col-md-3 v-stretch">
+                        <BiddingHistory item={item} />
                     </div>
                 </div>
            </> }

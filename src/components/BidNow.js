@@ -3,11 +3,16 @@ import { notifyError, showConfirm } from './../helpers';
 import { makeBid } from '../adapters/items';
 
 function BidNow({item}) {
-    const { latest_bid } = item;
-    const min_bid_amount = latest_bid ? latest_bid.amount : item.price;
+    const { latest_bid, auto_bid_activations } = item;
+    const minBidAmount = latest_bid ? latest_bid.amount : item.price;
+    let autoBidActivated = Array.isArray(auto_bid_activations) && !!auto_bid_activations.length
 
-    const [auto_bidding, setAutoBidding] = useState(false);
-    const [amount, setAmount] = useState(min_bid_amount + 1);
+    // console.log(autoBidActivated)
+
+    const [auto_bidding, setAutoBidding] = useState(autoBidActivated);
+    const [amount, setAmount] = useState(minBidAmount + 1);
+
+    // console.log(auto_bidding)
 
     const processBidding = () => {
         makeBid({
@@ -15,7 +20,7 @@ function BidNow({item}) {
             item_id: item.id,
             auto_bidding: Number(auto_bidding)
         }).then(response => {
-            console.log(response);
+            autoBidActivated = auto_bidding;
         })
         .catch(error => {
             if (error.message) {
@@ -31,15 +36,15 @@ function BidNow({item}) {
 
         if (!parseFloat(amount)) {
             error = `A valid amount is required`;
-        } else if (amount <= min_bid_amount) {
-            error = `You can only bid more than $ ${min_bid_amount}`
+        } else if (amount <= minBidAmount) {
+            error = `You can only bid more than $ ${minBidAmount}`
         }
 
         if (error) {
             return notifyError(error, 'Incorrect data');
         }
 
-        if (auto_bidding) {
+        if (!autoBidActivated && auto_bidding) {
             showConfirm(
                 `Activate Auto Bidding?`,
                 `Once this bid is placed, auto bidding will be activated for this item. Please confirm`,
@@ -55,8 +60,8 @@ function BidNow({item}) {
     }
 
     return (
-        <form className="bg-base-soft p-3 pl-4 pr-4 rounded elevation" onSubmit={submit}>
-            <h2 className="text-white mb-4">Place your bid</h2>
+        <form className="bg-base-soft p-3 pl-4 pr-4 rounded elevation v-stretch" onSubmit={submit}>
+            <h2 className="text-white mb-4 font-small">Place your bid</h2>
             <div className="form-group elevation mb-4">
                 <label htmlFor="amount" className="form-label">Bid Amount</label>
                 <input
@@ -69,12 +74,12 @@ function BidNow({item}) {
                 />
             </div>
 
-            <label className="text-white cursor-pointer">
+            {autoBidActivated ? <p className="text-success">You've setup auto-bidding for this item</p> : <label className="text-white cursor-pointer">
                 <input value={auto_bidding} onChange={(e) => setAutoBidding(e.target.checked)} type="checkbox" className="mr-2"/>
                 <span>Turn On Auto Bidding</span>
-            </label>
+            </label>}
 
-            <button type="submit" className="btn btn-success btn-block mt-4 font-small">SUBMIT BID</button>
+            <button type="submit" className="btn btn-primary btn-block mt-4 font-small">SUBMIT BID</button>
         </form>
     )
 }

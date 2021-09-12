@@ -20,3 +20,13 @@ export const showConfirm = (title, text, okay = `Confirm`) => {
         confirmButtonText: okay
     })
 }
+
+export const notifySuccess = (title) => {
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title,
+        showConfirmButton: false,
+        timer: 1500
+    })
+}

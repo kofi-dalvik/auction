@@ -1,6 +1,8 @@
+import Router from './pages/Router';
+
 function App() {
   return (
-    <h1>Welcome</h1>
+    <Router />
   );
 }
 

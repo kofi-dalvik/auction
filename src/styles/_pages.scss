@@ -163,23 +163,24 @@
         }
     }
 
-    .current-bidder{
-        background-color: rgba($base-dark, 0.5);
-        padding: 0 5px;
-        border-radius: 5px;
-        display: flex;
-        align-items: center;
-        height: $height + 5px;
+}
 
-        img{
-            width: $height;
-            height: $height;
-            object-fit: cover;
-            border-radius: 50%;
-            padding: 5px;
-            // border: 2px solid rgba(black, 0.25);
-            background-color: rgba(black, 0.25);
-        }
+.current-bidder{
+    background-color: rgba($base-dark, 0.5);
+    padding: 0 5px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    height: $height + 5px;
+
+    img{
+        width: $height;
+        height: $height;
+        object-fit: cover;
+        border-radius: 50%;
+        padding: 5px;
+        // border: 2px solid rgba(black, 0.25);
+        background-color: rgba(black, 0.25);
     }
 }
 

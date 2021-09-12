@@ -3,10 +3,9 @@ import { Link } from 'react-router-dom';
 import CurrentBidder from './CurrentBidder';
 import Timer from './Timer';
 import Carousel from './Carousel';
+import PropTypes from 'prop-types';
 
-function Item({item}) {
-    // const images = ['/logo512.png', '/logo512.png', '/logo512.png',];
-
+function Item({ item, isDetailed}) {
     return (
         <div className="auction-item elevation v-stretch">
             <div className="media">
@@ -15,9 +14,12 @@ function Item({item}) {
                         $ { item.price }
                     </button>
 
-                    <Link to={`items/${item.id}`} className="button elevation font-xs bid-now">
-                        Bid Now
-                    </Link>
+                    {!isDetailed && (
+                        <Link to={`items/${item.id}`} className="button elevation font-xs bid-now">
+                            Bid Now
+                        </Link>
+                    )}
+
                 </div>
 
                 <Carousel images={item.images} />
@@ -26,13 +28,22 @@ function Item({item}) {
             </div>
 
             <div className="description mt-1 p-2">
-                <h5 className="text-white font-small text-truncate">{item.name}</h5>
-                <p className="mb-1 text-muted text-truncate">{item.description}</p>
+                <h5 className={`text-white ${isDetailed ? 'font-big' : 'font-small text-truncate'}`}>{item.name}</h5>
+                <p className={`mb-1 text-muted ${!isDetailed && 'text-truncate'}`}>{item.description}</p>
 
                 <CurrentBidder bid={item.latest_bid} />
             </div>
         </div>
     )
+}
+
+Item.defaultProps = {
+    isDetailed: false
+}
+
+Item.propTypes = {
+    item: PropTypes.object.isRequired,
+    isDetailed: PropTypes.bool
 }
 
 export default Item;

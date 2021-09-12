@@ -1,0 +1,8 @@
+.btn {
+    height: $height;
+    border: none;
+
+    &.btn-primary {
+        background-color: $primary;
+    }
+}

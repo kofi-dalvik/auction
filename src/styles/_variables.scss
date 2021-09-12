@@ -1,0 +1,13 @@
+$base-softer: rgba(white, 0.5);
+$base-soft: #1E2028;
+$base: #141414;
+$base-dark: #101010;
+
+$primary: #394BF2;
+
+$height: 50px;
+$font-size: 14px;
+
+$breakpoints: ('small': (max-width: 768px),
+    'medium': (max-width: 992px),
+    'large': (max-width: 1200px)) !default;

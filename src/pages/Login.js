@@ -6,11 +6,11 @@ function Login() {
                     <div className="text-center mb-5 title">
                         <h1>Scopic Test</h1>
                         <hr/>
-                        <h4>Login to Your Account</h4>
-                        <p className="m-0">Start bidding for free</p>
+                        <h4 className="font-big">Login to Your Account</h4>
+                        <p className="m-0 text-muted">Start bidding for free</p>
                     </div>
 
-                    <form className="p-3 pr-5 pl-5">
+                    <form className="">
                         <div className="form-group elevation mb-4">
                             <label htmlFor="username" className="form-label">Username</label>
                             <input type="text" className="form-control" id="username" placeholder=".e.g johndoe"/>

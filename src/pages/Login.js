@@ -21,7 +21,14 @@ function Login() {
                             <input type="password" className="form-control" id="password" placeholder=".e.g secret" />
                         </div>
 
-                        <button type="submit" className="btn btn-primary btn-block mt-5 font-small">Login to Your Account</button>
+                        <div className="mt-4 d-flex justify-content-between">
+                            <label>
+                                <input type="checkbox"/> Remember
+                            </label>
+                            <span>Forgot Password?</span>
+                        </div>
+
+                        <button type="submit" className="btn btn-primary btn-block mt-4 font-small">Login to Your Account</button>
                     </form>
                 </div>
             </div>

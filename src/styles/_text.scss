@@ -19,8 +19,12 @@ h6 {
     font-size: $font-size;
 }
 
-a,li,p,div,label,span{
+a,li,p,div,label,span,button{
     font-size: $font-size;
+}
+
+.font-xs {
+    font-size: $font-size - 2px;
 }
 
 .font-small {
@@ -29,4 +33,12 @@ a,li,p,div,label,span{
 
 .font-big {
     font-size: $font-size + 4;
+}
+
+.text-primary{
+    color: $primary !important;
+}
+
+.text-secondary{
+    color: $secondary !important;
 }

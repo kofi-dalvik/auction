@@ -1,5 +1,6 @@
 .app-header{
     position: fixed;
+    z-index: 10;
     top: 0;
     left: 0;
     right: 0;
@@ -86,7 +87,7 @@
 }
 
 .content-wrapper{
-    margin-top: $height * 2;
+    margin-top: $height * 2.2;
 }
 
 .login-page {
@@ -100,5 +101,103 @@
     @include respond-to('small') {
         padding: 20px;
         margin: 10px;
+    }
+}
+
+.auction-item{
+    border-radius: 10px;
+    background-color: $base-soft;
+    padding: 10px;
+
+    .media{
+        height: 200px;
+        border-radius: inherit;
+        background-color: $base;
+        position: relative;
+
+        .actions{
+            background-color: transparent;
+            padding: 5px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 5px;
+            display: flex;
+            justify-content: space-between;
+
+            button{
+                border: none;
+                background-color: rgba($base-soft, 0.5);
+                // background-color: $secondary;
+                padding: 10px 20px;
+                border-radius: 20px;
+                color: white;
+            }
+
+            .bid-now{
+                background-color: rgba($secondary, 0.25);
+                border: 2px solid $secondary;
+                color: white;
+
+                &:hover{
+                    background-color: $secondary;
+                }
+            }
+        }
+
+        .timer{
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            right: 0;
+            padding: 5px;
+            color: white;
+            // background-color: red;
+
+            span{
+                background-color: $base-soft;
+                padding: 3px 5px;
+                border-radius: 10px;
+                margin: 0 2px;
+            }
+        }
+    }
+
+    .current-bidder{
+        display: flex;
+        img{
+            width: $height;
+            height: $height;
+            object-fit: cover;
+            border-radius: 50%;
+            padding: 5px;
+            // border: 2px solid rgba(black, 0.25);
+            background-color: rgba(black, 0.25);
+        }
+    }
+}
+
+.pagination{
+    .page-item {
+        .page-link{
+            background: $base-soft;
+            border-color: $base;
+            color: white;
+
+            &:hover{
+                background-color: rgba($base-soft, 0.5);
+                color: $secondary;
+            }
+
+            &:focus{
+                box-shadow: none;
+            }
+        }
+
+        &.active{
+            .page-link{
+                background-color: $secondary;
+            }
+        }
     }
 }

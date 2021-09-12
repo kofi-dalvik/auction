@@ -6,8 +6,22 @@ export const index = (params) => {
         .catch(error => Promise.reject(error.response.data))
 }
 
+export const show = (id) => {
+    return axios.get(`/items/${id}`)
+        .then(response => Promise.resolve(response.data))
+        .catch(error => Promise.reject(error.response.data))
+}
+
+export const makeBid = (data) => {
+    return axios.post(`/biddings`, data)
+        .then(response => Promise.resolve(response.data))
+        .catch(error => Promise.reject(error.response.data))
+}
+
 const service = {
     index,
+    show,
+    makeBid
 }
 
 export default service;

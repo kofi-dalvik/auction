@@ -4,11 +4,11 @@
     padding: 0;
 
     label {
-        color: $base-softer;
-        font-size: 13px;
+        color: rgba(white, 0.75);
         position: absolute;
-        top: 2px;
+        font-size: 13px;
         left: 10px;
+        top: 2px;
     }
 
     .form-control {

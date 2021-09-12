@@ -12,7 +12,7 @@ export const reducer = (state, action) => {
     const { type, payload } = action;
 
     if (typeof actions[type] === 'function') {
-        return actions[type](state, payload);
+        return actions[type]({...state}, payload);
     }
 
     return state;

@@ -1,6 +1,6 @@
 .app-header{
     position: fixed;
-    z-index: 10;
+    z-index: 100;
     top: 0;
     left: 0;
     right: 0;
@@ -123,12 +123,13 @@
             left: 0;
             right: 0;
             top: 5px;
+            z-index: 10;
             display: flex;
             justify-content: space-between;
 
             .button{
                 border: none;
-                background-color: rgba($base-soft, 0.5);
+                background-color: rgba($primary, 0.8);
                 // background-color: $secondary;
                 padding: 10px 20px;
                 border-radius: 20px;
@@ -137,24 +138,24 @@
             }
 
             .bid-now{
-                background-color: rgba($secondary, 0.25);
-                border: 2px solid $secondary;
+                background-color: $secondary;
+                // border: 2px solid $secondary;
                 color: white;
 
                 &:hover{
-                    background-color: $secondary;
+                    background-color: $primary;
                 }
             }
         }
 
         .timer{
             position: absolute;
-            bottom: 5px;
+            bottom: 0;
             left: 0;
             right: 0;
             padding: 5px;
             color: white;
-            // background-color: red;
+            background-color: rgba($primary, 0.5);
 
             span{
                 background-color: $base-soft;
@@ -166,7 +167,13 @@
     }
 
     .current-bidder{
+        background-color: rgba($base-dark, 0.5);
+        padding: 0 5px;
+        border-radius: 5px;
         display: flex;
+        align-items: center;
+        height: $height + 5px;
+
         img{
             width: $height;
             height: $height;

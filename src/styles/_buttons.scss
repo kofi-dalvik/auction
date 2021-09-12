@@ -5,4 +5,8 @@
     &.btn-primary {
         background-color: $primary;
     }
+
+    &:active,&:focus{
+        box-shadow: none;
+    }
 }

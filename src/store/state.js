@@ -8,7 +8,7 @@ const state = {
     auth: {
         user,
         token,
-        isLoggedIn: !!user && !token
+        isLoggedIn: !!user
     }
 }
 

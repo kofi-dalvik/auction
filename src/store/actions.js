@@ -16,8 +16,6 @@ export const SET_AUTH_USER = (state, payload) => {
 
     state.auth.isLoggedIn = !!state.auth.user;
 
-    console.log(state)
-
     return state;
 }
 

@@ -31,7 +31,7 @@ function Item({ item, isDetailed}) {
                 <h5 className={`text-white ${isDetailed ? 'font-big' : 'font-small text-truncate'}`}>{item.name}</h5>
                 <p className={`mb-1 text-muted ${!isDetailed && 'text-truncate'}`}>{item.description}</p>
 
-                <CurrentBidder bid={item.latest_bid} />
+                <CurrentBidder title="Current Bid" bid={item.latest_bid} />
             </div>
         </div>
     )

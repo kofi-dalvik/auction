@@ -1,3 +1,94 @@
+.app-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    .top-bar, .bottom-bar{
+        height: $height;
+    }
+
+    .top-bar{
+        background-color: $primary;
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+    }
+
+    .bottom-bar {
+        background-color: $base-soft;
+
+        .content{
+            display: flex;
+            align-items: center;
+
+            a{
+                border-radius: 5px;
+                // background-color: rgba(black, 0.25);
+                display: flex;
+                align-items: center;
+                height: $height - 10px;
+                margin-right: 5px;
+                padding: 0 10px;
+                text-decoration: none;
+                color: rgba(white, 0.5);
+
+                .icon{
+                    margin-right: 5px;
+                }
+
+                &:hover, &.active{
+                    background-color: rgba(black, 0.25);
+                    color: $secondary;
+                }
+            }
+        }
+    }
+
+    .logo {
+        height: $height - 10px;
+        width: $height - 10px;
+        background-color: rgba(black, 0.25);
+        border-radius: 50%;
+        padding: 5px;
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    .account{
+        .user{
+            display: flex;
+            align-items: center;
+            background-color: rgba(black, 0.25);
+            color: white;
+            height: $height - 10px;
+            border: none;
+            border-radius: 20px;
+            padding-left: 20px;
+            padding-right: 0;
+            font-weight: bold;
+
+            img{
+                width: 100%;
+                height: 100%;
+                background-color: white;
+                border-radius: 50%;
+            }
+        }
+    }
+}
+
+.content-wrapper{
+    margin-top: $height * 2;
+}
+
 .login-page {
     background-color: $base-soft;
     padding: 50px;

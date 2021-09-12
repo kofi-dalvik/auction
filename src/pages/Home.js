@@ -16,7 +16,7 @@ function Home() {
     useEffect(() => {
         getItems({ ...params, page: currentPage })
             .then(response => {
-                console.log(response)
+                // console.log(response)
                 dispatch({
                     type: SET_ITEMS,
                     payload: response

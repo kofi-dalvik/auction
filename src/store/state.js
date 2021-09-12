@@ -1,4 +1,4 @@
-import { storageKeys } from './actions';
+import { storageKeys } from '../constants';
 
 //Get stored user & token from localstorage
 const user = JSON.parse(localStorage.getItem(storageKeys.user));

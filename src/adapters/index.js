@@ -1,5 +1,5 @@
 import Axios from 'axios';
-import { storageKeys } from '../store/actions';
+import { storageKeys } from '../constants';
 
 const baseURL = {
     production: 'http://localhost:8000/api/',

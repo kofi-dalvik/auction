@@ -1,7 +1,5 @@
-export const storageKeys = {
-    token: 'token',
-    user: 'user'
-};
+import initialState from './state';
+import {storageKeys} from './../constants';
 
 export const SET_AUTH_USER = (state, payload) => {
     state.auth.user = payload.user;
@@ -19,9 +17,8 @@ export const SET_AUTH_USER = (state, payload) => {
     return state;
 }
 
-export const LOGOUT = (state, payload) => {
-    state.auth.user = null;
-    state.auth.token = null
+export const LOGOUT = (state) => {
+    state = { ...initialState}
 
     localStorage.removeItem(storageKeys.token);
     localStorage.removeItem(storageKeys.user);

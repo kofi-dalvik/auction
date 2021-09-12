@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AiOutlineHome, AiOutlineSetting } from 'react-icons/ai';
 
@@ -36,4 +37,4 @@ function Header() {
     )
 }
 
-export default Header;
+export default memo(Header);

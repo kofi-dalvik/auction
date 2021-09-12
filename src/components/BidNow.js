@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import { notifyError, showConfirm } from './../helpers';
+import { notifyError, notifySuccess, showConfirm } from './../helpers';
 import { makeBid } from '../adapters/items';
 
 function BidNow({item}) {
@@ -21,6 +21,7 @@ function BidNow({item}) {
             auto_bidding: Number(auto_bidding)
         }).then(response => {
             autoBidActivated = auto_bidding;
+            notifySuccess(`Your $${amount} bid has been submited`);
         })
         .catch(error => {
             if (error.message) {

@@ -7,6 +7,8 @@ import {SET_AUTH_USER} from '../store/action-types';
 import {routes}  from './Router';
 import { notifyError } from '../helpers';
 
+import {Button} from '../components';
+
 function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -73,14 +75,7 @@ function Login() {
                                 placeholder=".e.g secret" />
                         </div>
 
-                        <div className="mt-4 d-flex justify-content-between">
-                            <label>
-                                <input type="checkbox"/> Remember
-                            </label>
-                            <span>Forgot Password?</span>
-                        </div>
-
-                        <button type="submit" className="btn btn-primary btn-block mt-4 font-small">Login to Your Account</button>
+                        <Button className="btn-primary mt-5" block label="Login to Your Account"/>
                     </form>
                 </div>
             </div>

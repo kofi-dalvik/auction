@@ -1,8 +1,12 @@
 import React from 'react'
 
 function CurrentBidder({ bid, title}) {
-    const created_at = new Date(bid.created_at).toLocaleDateString()
-    const [time,] = new Date(bid.created_at).toTimeString().split(' ')
+    let created_at, time;
+
+    if (bid) {
+        created_at = new Date(bid.created_at).toLocaleDateString();
+        [time,] = new Date(bid.created_at).toTimeString().split(' ');
+    }
 
     return (
         <>

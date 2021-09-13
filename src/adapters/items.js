@@ -18,10 +18,17 @@ export const makeBid = (data) => {
         .catch(error => Promise.reject(error.response.data))
 }
 
+export const saveMaxAutoBid = (data) => {
+    return axios.post(`/biddings/configs`, data)
+        .then(response => Promise.resolve(response.data))
+        .catch(error => Promise.reject(error.response.data))
+}
+
 const service = {
     index,
     show,
-    makeBid
+    makeBid,
+    saveMaxAutoBid
 }
 
 export default service;

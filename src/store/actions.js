@@ -1,4 +1,3 @@
-import initialState from './state';
 import {storageKeys} from './../constants';
 
 export const SET_AUTH_USER = (state, payload) => {
@@ -17,11 +16,13 @@ export const SET_AUTH_USER = (state, payload) => {
     return state;
 }
 
-export const LOGOUT = (state) => {
-    state = { ...initialState}
-
+export const LOGOUT = (state, payload) => {
     localStorage.removeItem(storageKeys.token);
     localStorage.removeItem(storageKeys.user);
+
+    state.auth.user = null;
+    state.auth.token = null;
+    state.auth.isLoggedIn = false;
 
     return state;
 }
@@ -42,9 +43,9 @@ export const SET_ITEMS = (state, payload) => {
 }
 
 const actions = {
-    SET_AUTH_USER,
     LOGOUT,
-    SET_ITEMS
+    SET_ITEMS,
+    SET_AUTH_USER,
 }
 
 export default actions;

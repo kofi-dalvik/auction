@@ -1,11 +1,25 @@
-import { memo } from 'react';
-import { NavLink } from 'react-router-dom';
+import { memo, useContext } from 'react';
+import { NavLink, useHistory } from 'react-router-dom';
 import { AiOutlineHome, AiOutlineSetting } from 'react-icons/ai';
 
 import BoxedContent from './BoxedContent';
 import {routes} from './../../pages/Router';
+import { DispatchContext, StateContext } from '../../store';
+import { LOGOUT } from '../../store/action-types';
 
 function Header() {
+    const {auth} = useContext(StateContext);
+    const dispatch = useContext(DispatchContext);
+    const history = useHistory();
+
+    const signOut = () => {
+        console.log('signout')
+
+        dispatch({type: LOGOUT, payload: null});
+
+        history.push(routes.login);
+    }
+
     return (
         <header className="app-header elevation">
             <div className="top-bar elevation">
@@ -14,9 +28,9 @@ function Header() {
                         <img src="/logo512.png" alt="Logo"/>
                     </div>
                     <div className="account">
-                        <button className="user elevation">
+                        <button className="user elevation" onClick={signOut}>
                             <span>Logout</span>
-                            <img src="/logo512.png" alt="Profile" className="ml-2" />
+                            {auth.user && <img src={auth.user.image_url} alt="Profile" className="ml-2" /> }
                         </button>
                     </div>
                 </BoxedContent>

@@ -24,7 +24,7 @@ function Header() {
 
     return (
         <header className="app-header elevation">
-            <div className="top-bar elevation">
+            <div className="top-bar elevation pl-3 pr-3">
                 <BoxedContent className="content">
                     <div className="logo">
                         <img src="/logo512.png" alt="Logo"/>
@@ -38,7 +38,7 @@ function Header() {
                 </BoxedContent>
             </div>
 
-            <div className="bottom-bar">
+            <div className="bottom-bar pl-3 pr-3">
                 <BoxedContent className="v-stretch content">
                     <NavLink to={routes.home} activeClassName="active">
                         <AiOutlineHome className="icon" /> Home

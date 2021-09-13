@@ -13,7 +13,8 @@ function Button({label, onClick, type, className, block, icon, raw}) {
 }
 
 Button.propTypes = {
-    label: PropTypes.string,
+    icon: PropTypes.any,
+    label: PropTypes.any,
     onClick: PropTypes.func,
     type:  PropTypes.string,
     className: PropTypes.string,

@@ -3,7 +3,7 @@ import { makeBid } from '../adapters/items';
 import { Button } from '../components';
 import { notifyError, notifySuccess } from './../helpers';
 
-function BidNow({item}) {
+function BidNow({ item, setItemBid}) {
     const { latest_bid } = item;
     const minBidAmount = latest_bid ? latest_bid.amount : item.price;
 
@@ -12,6 +12,8 @@ function BidNow({item}) {
     const processBidding = () => {
         makeBid({amount, item_id: item.id})
         .then(response => {
+            setItemBid(response);
+
             notifySuccess(`Your $${amount} bid has been submited`);
         })
         .catch(error => {

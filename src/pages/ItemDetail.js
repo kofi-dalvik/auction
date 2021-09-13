@@ -12,10 +12,18 @@ function ItemDetail() {
 
     const [item, setItem] = useState(null);
 
+    const setItemBid = (bid) => {
+        setItem((prevState) => {
+            const temp = { ...prevState, latest_bid: {...bid} };
+            temp.biddings.push({...bid});
+
+            return temp;
+        })
+    }
+
     useEffect(() => {
         show(item_id)
         .then(response => {
-            // console.log(response);
             setItem(response);
         })
         .catch(error => {
@@ -34,7 +42,7 @@ function ItemDetail() {
                     <div className="col-md-3 col-sm-6 v-stretch mb-3">
                         <ToggleAutoBid item={item}/>
 
-                        <BidNow item={item}/>
+                        <BidNow item={item} setItemBid={setItemBid}/>
                     </div>
                     <div className="col-md-3 col-sm-6 v-stretch mb-3">
                         <BiddingHistory item={item} />

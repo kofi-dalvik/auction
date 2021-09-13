@@ -6,6 +6,7 @@ import BoxedContent from './BoxedContent';
 import {routes} from './../../pages/Router';
 import { DispatchContext, StateContext } from '../../store';
 import { LOGOUT } from '../../store/action-types';
+import { logout } from '../../adapters/authentication';
 
 function Header() {
     const {auth} = useContext(StateContext);
@@ -13,11 +14,12 @@ function Header() {
     const history = useHistory();
 
     const signOut = () => {
-        console.log('signout')
-
-        dispatch({type: LOGOUT, payload: null});
-
-        history.push(routes.login);
+        logout()
+        .then(() => {
+            dispatch({type: LOGOUT, payload: null});
+            history.push(routes.login);
+        })
+        .catch(error => null);
     }
 
     return (

@@ -14,7 +14,7 @@ function ItemDetail() {
     useEffect(() => {
         show(item_id)
         .then(response => {
-            console.log(response);
+            // console.log(response);
             setItem(response);
         })
         .catch(error => {
@@ -27,13 +27,13 @@ function ItemDetail() {
         <AuthLayout className="pt-3">
            { item && <>
                 <div className="row">
-                    <div className="col-md-6">
+                    <div className="col-md-6 mb-3">
                         <Item item={item} isDetailed />
                     </div>
-                    <div className="col-md-3 v-stretch">
+                    <div className="col-md-3 col-sm-6 v-stretch mb-3">
                         <BidNow item={item}/>
                     </div>
-                    <div className="col-md-3 v-stretch">
+                    <div className="col-md-3 col-sm-6 v-stretch mb-3">
                         <BiddingHistory item={item} />
                     </div>
                 </div>

@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 
 function Item({ item, isDetailed}) {
     return (
-        <div className="auction-item elevation v-stretch">
+        <div className={`auction-item elevation v-stretch ${isDetailed && 'detailed'}`}>
             <div className="media">
                 <div className="actions">
                     <button className="button elevations font-weight-bold">

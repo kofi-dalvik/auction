@@ -5,6 +5,7 @@ import { DispatchContext, StateContext } from './../store';
 import { login } from '../adapters/authentication';
 import {SET_AUTH_USER} from '../store/action-types';
 import {routes}  from './Router';
+import { notifyError } from '../helpers';
 
 function Login() {
     const [username, setUsername] = useState('');
@@ -30,7 +31,10 @@ function Login() {
             history.push(routes.home);
         })
         .catch(error => {
-            console.log(error);
+            notifyError(
+                `Make sure your credentials are valid. Since this is a demo, use user1 or user2 as username`,
+                `Login failed`
+            )
         })
     }
 

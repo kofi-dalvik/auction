@@ -10,7 +10,7 @@
     }
 
     .top-bar{
-        background-color: $primary;
+        background-color: #5085ED;
 
         .content {
             display: flex;
@@ -21,7 +21,7 @@
     }
 
     .bottom-bar {
-        background-color: $base-soft;
+        background-color: darken($base-soft, 0%);
 
         .content{
             display: flex;
@@ -113,12 +113,12 @@
         position: relative;
 
         .actions{
-            background-color: transparent;
+            background-color: rgba($base-soft, 0.5);
             padding: 5px;
             position: absolute;
             left: 0;
             right: 0;
-            top: 5px;
+            top: 0px;
             z-index: 10;
             display: flex;
             justify-content: space-between;

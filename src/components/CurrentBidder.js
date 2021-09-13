@@ -5,7 +5,7 @@ function CurrentBidder({ bid, title}) {
         <>
             {title && <p className="text-secondary mb-1">{title}</p> }
 
-            <div className="current-bidder">
+            <div className="current-bidder mb-1">
                 {bid ? (<>
                     <img src={bid.user.image_url} alt="current bidder" className="mr-2" />
                     <div className="details">

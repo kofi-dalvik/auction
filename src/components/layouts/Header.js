@@ -14,12 +14,11 @@ function Header() {
     const history = useHistory();
 
     const signOut = () => {
-        logout()
-        .then(() => {
-            dispatch({type: LOGOUT, payload: null});
-            history.push(routes.login);
-        })
-        .catch(error => null);
+        logout().catch(() => null);
+
+        dispatch({ type: LOGOUT, payload: null });
+
+        history.push(routes.login);
     }
 
     return (

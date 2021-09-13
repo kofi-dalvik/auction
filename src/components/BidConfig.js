@@ -3,6 +3,7 @@ import { saveMaxAutoBid } from '../adapters/items';
 import { notifyError, notifySuccess } from '../helpers';
 import {StateContext, DispatchContext} from '../store';
 import { SET_AUTH_USER } from '../store/action-types';
+import {Button} from '../components';
 
 function BidConfig() {
     const {auth} = useContext(StateContext);
@@ -61,11 +62,7 @@ function BidConfig() {
                             />
                         </div>
 
-                        <button
-                            type="submit"
-                            className="btn btn-primary btn-block mt-5 font-small">
-                                SAVE CONFIGURATION
-                        </button>
+                        <Button className="btn-primary mt-5" label="SAVE CONFIGURATION" block/>
                     </form>
                 </div>
             </div>

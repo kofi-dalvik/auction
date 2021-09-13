@@ -127,10 +127,13 @@
                 border: none;
                 background-color: rgba($primary, 0.8);
                 // background-color: $secondary;
-                padding: 10px 20px;
+                height: 40px;
+                padding: 0 20px;
                 border-radius: 20px;
                 color: white;
                 text-decoration: none;
+                display: flex;
+                align-items: center;
             }
 
             .bid-now{

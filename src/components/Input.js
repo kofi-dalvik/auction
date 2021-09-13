@@ -1,10 +1,10 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 function Input(props) {
     const {
         className,
-        // label,
+        label,
         value,
         name,
         placeholder,
@@ -26,13 +26,13 @@ function Input(props) {
     )
 }
 
-/* Input.propTypes  = {
+Input.propTypes  = {
     className: PropTypes.string,
     label: PropTypes.string.isRequired,
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     name: PropTypes.string.isRequired,
     placeholder: PropTypes.string,
     onChange: PropTypes.func
-} */
+}
 
 export default Input

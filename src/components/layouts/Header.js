@@ -7,6 +7,7 @@ import {routes} from './../../pages/Router';
 import { DispatchContext, StateContext } from '../../store';
 import { LOGOUT } from '../../store/action-types';
 import { logout } from '../../adapters/authentication';
+import { Button } from '../index';
 
 function Header() {
     const {auth} = useContext(StateContext);
@@ -29,10 +30,13 @@ function Header() {
                         <img src="/logo512.png" alt="Logo"/>
                     </div>
                     <div className="account">
-                        <button className="user elevation" onClick={signOut}>
-                            <span>Logout</span>
-                            {auth.user && <img src={auth.user.image_url} alt="Profile" className="ml-2" /> }
-                        </button>
+                        <Button
+                            raw
+                            onClick={signOut}
+                            className="user elevation"
+                            icon={<span>Logout</span>}
+                            label={auth.user && <img src={auth.user.image_url} alt="Profile" className="ml-2" />}
+                        />
                     </div>
                 </BoxedContent>
             </div>

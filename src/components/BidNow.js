@@ -1,6 +1,7 @@
 import {useState} from 'react';
-import { notifyError, notifySuccess } from './../helpers';
 import { makeBid } from '../adapters/items';
+import { Button } from '../components';
+import { notifyError, notifySuccess } from './../helpers';
 
 function BidNow({item}) {
     const { latest_bid } = item;
@@ -53,12 +54,7 @@ function BidNow({item}) {
                 />
             </div>
 
-            {/* {autoBidActivated ? <p className="text-success">You've setup auto-bidding for this item</p> : <label className="text-white cursor-pointer">
-                <input value={auto_bidding} onChange={(e) => setAutoBidding(e.target.checked)} type="checkbox" className="mr-2"/>
-                <span>Turn On Auto Bidding</span>
-            </label>} */}
-
-            <button type="submit" className="btn btn-primary btn-block mt-4 font-small">SUBMIT BID</button>
+            <Button className="btn-primary mt-4" label="SUBMIT BID" block />
         </form>
     )
 }

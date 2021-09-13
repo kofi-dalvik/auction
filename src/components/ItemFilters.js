@@ -1,8 +1,10 @@
 import {useState, useEffect} from 'react';
 import { BiSearchAlt } from 'react-icons/bi';
 import PropTypes from 'prop-types';
+import { Button } from '../components';
 
 function ItemFilters(props) {
+    const [inputText, setInputText] = useState('');
     const [keyword, setKeyword] = useState('');
     const [sortPrice, setSortPrice] = useState('any');
 
@@ -32,23 +34,24 @@ function ItemFilters(props) {
                 </div>
             </div>
             <div className="col-md-4 col-12">
-                <div className="form-group font-small">
+                <form onSubmit={(e) => {e.preventDefault(); setKeyword(inputText)}} className="form-group font-small">
                     <label className="form-label">Search items by keyword</label>
                     <div className="input-group">
                         <input
-                            value={keyword}
-                            onChange={(e) => setKeyword(e.target.value)}
+                            value={inputText}
+                            onChange={(e) => setInputText(e.target.value)}
                             type="text"
                             className="form-control"
                             placeholder="keyword"
                         />
                         <div className="input-group-append">
-                            <button className="btn btn-primary pl-3 pr-3" type ="button">
-                                <BiSearchAlt />
-                            </button>
+                            <Button
+                                className="btn-primary pl-3 pr-3"
+                                icon={<BiSearchAlt />}
+                            />
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     )

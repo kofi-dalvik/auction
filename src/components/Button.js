@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Button({label, onClick, type, className, block}) {
+function Button({label, onClick, type, className, block, icon, raw}) {
     return (
         <button
             type={type}
-            className={`btn ${block && 'btn-block'} font-small ${className}`}
+            className={`${!raw && 'btn' } ${block && 'btn-block'} font-small ${className}`}
             onClick={onClick}>
-            {label}
+            {icon} {label}
         </button>
     )
 }

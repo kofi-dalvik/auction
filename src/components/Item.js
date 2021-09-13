@@ -2,17 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import CurrentBidder from './CurrentBidder';
 import Timer from './Timer';
-import Carousel from './Carousel';
 import PropTypes from 'prop-types';
+import { Button, Carousel } from '../components';
 
 function Item({ item, isDetailed}) {
     return (
         <div className={`auction-item elevation ${isDetailed && 'detailed'}`}>
             <div className="media">
                 <div className="actions">
-                    <button className="button elevations font-weight-bold">
-                        $ { item.price }
-                    </button>
+                    <Button className="button elevations font-weight-bold" label={`$${item.price}`} />
 
                     {!isDetailed && (
                         <Link to={`items/${item.id}`} className="button elevation font-xs bid-now">

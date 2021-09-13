@@ -1,11 +1,9 @@
 import { useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
+
 import AuthLayout from './AuthLayout';
-import Item from '../components/Item';
 import { show } from '../adapters/items';
-import BidNow from '../components/BidNow';
-import BiddingHistory from '../components/BiddingHistory';
-import ToggleAutoBid from '../components/ToggleAutoBid';
+import { Item, BidNow, BiddingHistory, ToggleAutoBid} from '../components';
 
 function ItemDetail() {
     const {item_id} = useParams();

@@ -1,4 +1,4 @@
-import BidConfig from '../components/BidConfig';
+import {BidConfig} from '../components';
 import AuthLayout from './AuthLayout';
 
 function Settings() {

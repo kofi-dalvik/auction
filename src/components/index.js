@@ -11,4 +11,7 @@ export {default as CurrentBidder } from "./CurrentBidder";
 export {default as ToggleAutoBid } from "./ToggleAutoBid";
 export {default as BiddingHistory } from "./BiddingHistory";
 
+export {default as Header } from "./layouts/Header";
+export {default as BoxedContent } from "./layouts/BoxedContent";
+
 

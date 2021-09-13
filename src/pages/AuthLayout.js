@@ -1,5 +1,4 @@
-import Header from '../components/layouts/Header';
-import BoxedContent from '../components/layouts/BoxedContent';
+import { Header, BoxedContent} from '../components';
 
 function AuthLayout({children, className}) {
     return (

@@ -2,9 +2,7 @@ import {useState, useContext, useEffect} from 'react';
 import { StateContext, DispatchContext} from './../store';
 import AuthLayout from './AuthLayout';
 import { SET_ITEMS } from '../store/action-types';
-import ItemList from '../components/ItemList';
-import ItemFilters from '../components/ItemFilters';
-import Pagination from '../components/Pagination';
+import { ItemList, ItemFilters, Pagination} from '../components';
 import {index as getItems} from './../adapters/items';
 
 function Home() {

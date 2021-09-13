@@ -11,7 +11,7 @@ function BiddingHistory({ item }) {
 
             {biddings.map((bid, index) => <CurrentBidder bid={bid} key={index}/>)}
 
-            { !biddings.lenght && <p className="text-center text-muted">No bid found</p>}
+            {!biddings.length && <p className="text-center text-muted">No bid found</p>}
         </div>
     )
 }

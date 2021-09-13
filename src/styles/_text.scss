@@ -23,6 +23,10 @@ a,li,p,div,label,span,button{
     font-size: $font-size;
 }
 
+.font-xxs{
+    font-size: $font-size - 4px;
+}
+
 .font-xs {
     font-size: $font-size - 2px;
 }
